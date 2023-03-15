@@ -1,0 +1,62 @@
+@model Student_Mngement_system.Entities.StudentMangement
+@{ }
+<style>
+    table {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td,
+    th {
+        border: 1px solid green;
+        text-align: center;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #F2F2F2;
+    }
+    img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+</style>
+<div>
+    <h2>Student Details</h2>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Student Name</th>
+           
+            <th>DOB</th>
+            <th>Image</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Grade</th>
+            <th>Address</th>
+            <th>Documents</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Studentname</td>
+            <td>@Model.Dob</td>
+            
+            <td> @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <img src="~/Uploads/@Model.Image" alt="No image found" />
+                }
+                else
+                {
+                    <span>No image found</span>
+                } </td>
+            <td>@Model.Mobile</td>
+            <td>@Model.Email</td>
+            <td>@Model.Grade</td>
+             <td>@Model.Address</td>
+            <td>@Model.Documents</td>
+            <td>@Model.Descriptions</td>
+        </tr>
+    </tbody>
+</table>

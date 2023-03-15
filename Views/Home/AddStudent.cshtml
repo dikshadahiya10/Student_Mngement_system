@@ -1,0 +1,80 @@
+@model AddStudent
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="text">
+    @using(Html.BeginForm("AddStudent","Home",FormMethod.Post,new {id="formRegistration",enctype="multipart/form-data"}))
+    {
+<div class="form-group">
+   <label for="Dish Name" class="col-md-3 control-label">Student Name</label>
+    <div class="col-md-9">
+      @Html.TextBoxFor(x => x.StudentName, "", new { @class = "form-control", placeholder = "Student Name" })
+   @Html.ValidationMessageFor(x => x.StudentName)
+   </div>
+  </div>
+<div class="form-group">
+   <label for="cate" class="col-md-3 control-label">Grade</label>
+<div class="col-md-9">
+    @Html.TextAreaFor(x => x.Grade, new { @class = "form-control", placeholder = "Grade" })
+   @Html.ValidationMessageFor(x => x.Grade)
+   </div>
+</div>
+<br />
+ <div class="form-group">
+   <label for="type" class="col-md-3 control-label">Dob</label>
+<div class="col-md-9">
+   @Html.TextAreaFor(x => x.Dob, new { @class = "form-control", placeholder = "DOB" })
+   @Html.ValidationMessageFor(x => x.Dob)
+</div>
+</div>
+<br />
+<div class="form-group">
+   <label for="lastname" class="col-md-3 control-label">Image</label>
+<div class="col-md-9">
+   <input type="file" name="Image"/>
+</div>
+</div>
+  <div class="form-group">
+   <label for="price " class="col-md-3 control-label">Mobile</label>
+    <div class="col-md-9">
+      @Html.TextBoxFor(x => x.Mobile, "", new { @class = "form-control", placeholder = "Mobile" })
+   @Html.ValidationMessageFor(x => x.Mobile)
+   </div>
+  </div>
+    <div class="form-group">
+   <label for="price " class="col-md-3 control-label">Email</label>
+    <div class="col-md-9">
+       @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Email" })
+   @Html.ValidationMessageFor(x => x.Email)
+   </div>
+  </div>
+  <div class="form-group">
+   <label for="price " class="col-md-3 control-label">Address</label>
+    <div class="col-md-9">
+       @Html.TextBoxFor(x => x.Address, "", new { @class = "form-control", placeholder = "Address" })
+   @Html.ValidationMessageFor(x => x.Address)
+   </div>
+  </div>
+  <div class="form-group">
+   <label for="price " class="col-md-3 control-label">Documents</label>
+    <div class="col-md-9">
+       @Html.TextBoxFor(x => x.Documents, "", new { @class = "form-control", placeholder = "Documents" })
+   @Html.ValidationMessageFor(x => x.Documents)
+   </div>
+  </div>
+   <div class="form-group">
+   <label for="price " class="col-md-3 control-label">Description</label>
+    <div class="col-md-9">
+       @Html.TextBoxFor(x => x.Descriptions, "", new { @class = "form-control", placeholder = "Description" })
+   @Html.ValidationMessageFor(x => x.Descriptions)
+   </div>
+  </div>
+<div class="form-group">
+   <span id="spnMessage" class="text-danger">@TempData["Message"]</span>
+   <br />
+<div class="col-md-offset-3 col-md-9">
+   <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Submit</button>
+   <span style="margin-left:8px;"></span>
+</div>
+</div>
+    }
